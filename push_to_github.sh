@@ -3,10 +3,21 @@
 # Push this repository to GitHub over HTTPS.
 #
 # GitHub has not accepted account passwords for git operations since August
-# 2021.  At the "Password for ..." prompt, paste a Personal Access Token:
+# 2021.  At the "Password for ..." prompt, paste a Personal Access Token.
+# Generate one at github.com -> Settings -> Developer settings -> Personal
+# access tokens, as either:
 #
-#     github.com -> Settings -> Developer settings -> Personal access tokens
-#     -> Tokens (classic) -> Generate new token -> tick the "repo" scope
+#   fine-grained  https://github.com/settings/personal-access-tokens/new
+#                 Repository access: only this repo; Permissions ->
+#                 Repository permissions -> Contents -> Read and write.
+#                 The repo must already exist to be selectable.
+#
+#   classic       https://github.com/settings/tokens
+#                 Generate new token (classic), tick the top-level "repo"
+#                 scope.  Simpler, but grants write access to every repo
+#                 you own.
+#
+# Either way GitHub shows the token once -- copy it before leaving the page.
 #
 # Create the repository on github.com first -- empty, with no README,
 # .gitignore or licence, or the first push will be rejected as diverged --
