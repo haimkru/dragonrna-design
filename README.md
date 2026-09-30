@@ -7,13 +7,63 @@ alphabet-level combinatorial constraints, so the reported molecule is one that
 provably cannot form long duplexes anywhere — not merely one whose minimum-free-
 energy structure happens to look clean.
 
-## Requirements
+## Installation
 
-- Python 3.8+
-- [ViennaRNA](https://www.tbi.univie.ac.at/RNA/) with Python bindings
-  (`pip install ViennaRNA`, or `conda install -c bioconda viennarna`)
+Requires Python 3.9 or newer. The only dependency is
+[ViennaRNA](https://www.tbi.univie.ac.at/RNA/), pulled in automatically by
+pip.
 
-Developed against ViennaRNA 2.7.0 and Python 3.12. No other dependencies.
+### Install from GitHub
+
+```bash
+pip install git+https://github.com/haimkru/dragonrna-design
+```
+
+### Install from a clone
+
+```bash
+git clone https://github.com/haimkru/dragonrna-design
+cd dragonrna-design
+pip install .
+```
+
+Use `pip install -e .` instead if you want your edits to take effect without
+reinstalling.
+
+Either route puts three commands on your `PATH`, runnable from any directory:
+
+| Command | Script |
+| --- | --- |
+| `design-dragonrna` | `design_dragonrna.py` |
+| `generate-dragonrna` | `generate_dragonrna.py` |
+| `generate-nonfolding-oligo` | `generate_nonfolding_oligo.py` |
+
+### Without installing
+
+The scripts have no imports beyond the standard library and ViennaRNA, so you
+can clone and run them in place:
+
+```bash
+pip install ViennaRNA          # or: conda install -c bioconda viennarna
+python3 design_dragonrna.py --help
+```
+
+### If ViennaRNA fails to install
+
+pip builds it from source where no wheel is available, which needs a C
+compiler. Conda ships a prebuilt binary and is the easier route on clusters:
+
+```bash
+conda install -c bioconda viennarna
+```
+
+Then install this package without re-resolving the dependency:
+
+```bash
+pip install --no-deps git+https://github.com/haimkru/dragonrna-design
+```
+
+Developed against ViennaRNA 2.7.0 and Python 3.12.
 
 ## Example
 
@@ -21,8 +71,11 @@ Design a 49 nt chimera whose constant regions are DNA and whose single
 degenerate position is RNA:
 
 ```bash
-python3 design_dragonrna.py -x 20 -p 1 -z 12 -b 6 -l 4 --rna-regions P --seed 7
+design-dragonrna -x 20 -p 1 -z 12 -b 6 -l 4 --rna-regions P --seed 7
 ```
+
+(or `python3 design_dragonrna.py -x 20 ...` from a clone, if you skipped the
+install)
 
 ```
 Molecule (49 nt = 20+1N+12+6+4+6):
