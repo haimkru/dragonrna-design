@@ -107,3 +107,4 @@ unpaired.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+For questiosn reach out to hkrupkin@stanford.edu
