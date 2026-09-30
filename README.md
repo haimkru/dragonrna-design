@@ -7,6 +7,8 @@ alphabet-level combinatorial constraints, so the reported molecule is one that
 provably cannot form long duplexes anywhere — not merely one whose minimum-free-
 energy structure happens to look clean.
 
+Code was written by : Haim Krupkin+Claude 
+
 ## Installation
 
 Requires Python 3.9 or newer. The only dependency is
