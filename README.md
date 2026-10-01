@@ -18,7 +18,7 @@ pip.
 ### Install from GitHub
 
 ```bash
-pip install git+https://github.com/haimkru/dragonrna-design
+python3 -m pip install git+https://github.com/haimkru/dragonrna-design
 ```
 
 ### Install from a clone
@@ -26,7 +26,7 @@ pip install git+https://github.com/haimkru/dragonrna-design
 ```bash
 git clone https://github.com/haimkru/dragonrna-design
 cd dragonrna-design
-pip install .
+python3 -m pip install .
 ```
 The scripts have no imports beyond the standard library and ViennaRNA, so you
 can clone and run them in place:
