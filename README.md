@@ -28,16 +28,7 @@ git clone https://github.com/haimkru/dragonrna-design
 cd dragonrna-design
 python3 -m pip install .
 ```
-The scripts have no imports beyond the standard library and ViennaRNA, so you
-can clone and run them in place:
 
-```bash
-pip install ViennaRNA          # or: conda install -c bioconda viennarna
-python3 design_dragonrna.py --help
-```
-```bash
-conda install -c bioconda viennarna
-```
 
 ## Example
 
@@ -45,7 +36,7 @@ Design a 49 nt chimera whose constant regions are DNA and whose single
 degenerate position is RNA:
 
 ```bash
-design-dragonrna -x 20 -p 1 -z 12 -b 6 -l 4 --rna-regions P --seed 7
+python3 -m design_dragonrna -x 20 -p 1 -z 12 -b 6 -l 4 --rna-regions P --seed 7
 ```
 
 (or `python3 design_dragonrna.py -x 20 ...` from a clone, if you skipped the
